@@ -1,0 +1,19 @@
+# Dependencies
+**/node_modules/
+**/.pnp
+.pnp.*
+
+# Next.js & Production build
+**/.next/
+**/out/
+**/build/
+**/dist/
+
+# Environment Files (Keamanan Cluster Atlas)
+.env*
+**/.env*
+
+# Misc & Debug
+.DS_Store
+*.pem
+*.log*
