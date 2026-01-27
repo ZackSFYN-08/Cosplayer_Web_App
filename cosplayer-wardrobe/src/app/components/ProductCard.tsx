@@ -18,7 +18,19 @@ const ProductCard = ({ product }: ProductCardProps) => {
 
   // REVISI: Karena di Atlas imageUrl sudah STRING, kita langsung pakai saja
   // Ditambahkan pengecekan sederhana untuk fallback image
-  const imageUrl = product.imageUrl || '/images/placeholder.png';
+  const baseUrl =
+  process.env.NEXT_PUBLIC_BASE_URL || 'https://cosplay-wardrobe-app-w2mh.vercel.app';
+
+
+const imageUrl = product.imageUrl?.startsWith('http')
+  ? product.imageUrl
+  : `${baseUrl}${product.imageUrl}`;
+
+  console.log('IMAGE URL FROM DB:', product.imageUrl);
+console.log('BASE URL:', baseUrl);
+console.log('FINAL IMAGE URL:', imageUrl);
+
+
 
   return (
     <Link href={`/produk/${product._id}`} className="block bg-[#3C3C3C] rounded-2xl overflow-hidden group shadow-lg">
