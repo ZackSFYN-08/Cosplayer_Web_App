@@ -9,9 +9,10 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // Pertahankan setting abaikan error build yang kita buat tadi
-  typescript: { ignoreBuildErrors: true },
-  eslint: { ignoreDuringBuilds: true },
+  // Hapus bagian eslint yang lama karena sudah tidak didukung di v16
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
 export default nextConfig;
