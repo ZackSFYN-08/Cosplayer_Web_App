@@ -7,19 +7,17 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// DB connect
 app.use(async (req, res, next) => {
   await connectDB();
   next();
 });
 
-// ROUTES
-app.use('/api/products', require('../routes/products'));
-app.use('/api/orders', require('../routes/orders'));
-app.use('/api/auth', require('../routes/auth'));
-
 app.get('/api', (req, res) => {
   res.send('API OK');
 });
+
+app.use('/api/products', require('../routes/products'));
+app.use('/api/orders', require('../routes/orders'));
+app.use('/api/auth', require('../routes/auth'));
 
 module.exports = app;
