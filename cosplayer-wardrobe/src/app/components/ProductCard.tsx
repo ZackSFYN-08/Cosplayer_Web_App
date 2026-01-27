@@ -15,9 +15,11 @@ const ProductCard = ({ product }: ProductCardProps) => {
   }).format(product.price);
 
   // Fallback image in case the imageUrl array is empty
-  const imageUrl = product.imageUrl && product.imageUrl.length > 0 
-    ? product.imageUrl[0] 
-    : '/images/placeholder.png'; // Make sure you have a placeholder image at public/images/placeholder.png
+const imageUrl = typeof product.imageUrl === 'string' 
+  ? product.imageUrl 
+  : (Array.isArray(product.imageUrl) && product.imageUrl.length > 0 
+      ? product.imageUrl[0] 
+      : '/images/placeholder.png'); // Make sure you have a placeholder image at public/images/placeholder.png
 
   return (
     <Link href={`/produk/${product._id}`} className="block bg-[#3C3C3C] rounded-2xl overflow-hidden group">

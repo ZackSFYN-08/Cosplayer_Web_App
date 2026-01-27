@@ -1,14 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  typescript: {
-    // Mengabaikan error TypeScript agar build tetap berjalan
-    ignoreBuildErrors: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'down-id.img.susercontent.com',
+      },
+    ],
   },
-  eslint: {
-    // Mengabaikan error ESLint saat proses build di Vercel
-    ignoreDuringBuilds: true,
-  },
+  // Pertahankan setting abaikan error build yang kita buat tadi
+  typescript: { ignoreBuildErrors: true },
+  eslint: { ignoreDuringBuilds: true },
 };
 
 export default nextConfig;
