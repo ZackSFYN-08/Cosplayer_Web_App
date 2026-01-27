@@ -21,16 +21,6 @@ const ProductCard = ({ product }: ProductCardProps) => {
 
   return (
     <Link href={`/produk/${product._id}`} className="block bg-[#3C3C3C] rounded-2xl overflow-hidden group shadow-lg">
-      <div className="relative w-full h-48">
-        <Image
-          src={imageUrl} 
-          alt={product.name}
-          fill 
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-          className="object-cover group-hover:scale-105 transition-transform duration-300"
-          priority={false}
-        />
-      </div>
       <div className="relative w-full h-48 overflow-hidden">
         <Image
           src={imageUrl} 
