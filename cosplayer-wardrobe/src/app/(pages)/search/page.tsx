@@ -6,7 +6,7 @@ type SearchPageProps = {
 
 async function getProducts() {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/products`,
+    'https://cosplay-wardrobe-app.vercel.app/api/products',
     { cache: 'no-store' }
   );
 
