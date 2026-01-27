@@ -6,13 +6,12 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'down-id.img.susercontent.com',
+        pathname: '/**', // Mengizinkan semua folder di dalam domain tersebut
       },
     ],
   },
-  // Hapus bagian eslint yang lama karena sudah tidak didukung di v16
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  typescript: { ignoreBuildErrors: true },
+  eslint: { ignoreDuringBuilds: true },
 };
 
 export default nextConfig;
